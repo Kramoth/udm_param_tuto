@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<param name="/is_displayed" type="bool" value="false"/>
+	
+	<node pkg="udm_param_tuto" name="pub" type="publisher.py">
+		<param name="message" type="string" value="bonjour"/>
+	</node>
+	<node pkg="udm_param_tuto" name="sub" type="subscriber.py" output="screen">
+		<remap from="subscribed_topic" to="published_topic"/>
+	</node>
+</launch>
